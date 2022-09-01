@@ -1,12 +1,8 @@
-# MCU name
-MCU = atmega32u4
-
-# Bootloader selection
-BOOTLOADER = qmk-dfu
-
 # Build Options
 #   change yes to no to disable
 #
+BOOTLOADER = qmk-dfu
+
 BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
 MOUSEKEY_ENABLE = yes       # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
@@ -16,7 +12,13 @@ NKRO_ENABLE = yes           # Enable N-Key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
-SPLIT_KEYBOARD = yes
-POINTING_DEVICE_DRIVER = pmw3360
-VIA_ENABLE = yes
+SWAP_HANDS_ENABLE = yes
 
+POINTING_DEVICE_ENABLE = yes
+POINTING_DEVICE_DRIVER = pmw3360
+MOUSE_SHARED_EP = yes
+
+SPLIT_KEYBOARD = yes
+
+DEFAULT_FOLDER = handwired/tractyl_manuform/5x6_right/elite_c
+# VIA_ENABLE = yes
