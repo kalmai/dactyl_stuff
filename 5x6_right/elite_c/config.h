@@ -49,3 +49,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* PMW33XX Settings */
 #define PMW33XX_CS_PIN B6
+#define SPLIT_USB_DETECT
