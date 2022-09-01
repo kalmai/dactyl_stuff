@@ -37,7 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define AUDIO_PIN       C6
 
 /* serial.c configuration for split keyboard */
-#define USE_SERIAL
+// #define USE_SERIAL
 #define KINETIC_SPEED
 #define SOFT_SERIAL_PIN D2
 #define EE_HANDS
@@ -50,3 +50,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* PMW33XX Settings */
 #define PMW33XX_CS_PIN B6
 #define SPLIT_USB_DETECT
+#define MASTER_RIGHT
+#define USE_SERIAL
+
+#define SPLIT_USB_DETECT
+#define SPLIT_USB_TIMEOUT 2000

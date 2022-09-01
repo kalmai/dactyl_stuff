@@ -34,8 +34,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BOOTMAGIC_LITE_ROW          0
 #define BOOTMAGIC_LITE_COLUMN       0
 
-#define BOOTMAGIC_LITE_ROW_RIGHT    6
-#define BOOTMAGIC_LITE_COLUMN_RIGHT 5
+#define BOOTMAGIC_LITE_ROW_LEFT 6
+#define BOOTMAGIC_LITE_COLUMN_LEFT 5
 
 /* disable action features */
 //#define NO_ACTION_LAYER
@@ -43,4 +43,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_ONESHOT
 
 #define SPLIT_USB_DETECT
+#define SPLIT_USB_TIMEOUT 2000
 #define POINTING_DEVICE_RIGHT
+#define MASTER_RIGHT
+#define USE_SERIAL
+
+#define SOFT_SERIAL_PIN D2
+#define EE_HANDS

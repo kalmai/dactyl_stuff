@@ -30,9 +30,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_LAYER
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
-#define SPLIT_USB_DETECT
+//#define SPLIT_USB_DETECT
+//#define MASTER_RIGHT
+//#define USE_SERIAL
+#define SOFT_SERIAL_PIN D2
 
 #define SPLIT_POINTING_ENABLE
 #define POINTING_DEVICE_TASK_THROTTLE_MS 1
 
 #define SPLIT_TRANSACTION_IDS_KB RPC_ID_KB_CONFIG_SYNC
+#define USE_SERIAL
+
+#define SPLIT_USB_DETECT
+#define SPLIT_USB_TIMEOUT 2000
