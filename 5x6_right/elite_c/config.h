@@ -34,24 +34,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     { 10, 10 }
 #define RGBLIGHT_LIMIT_VAL 80
 
-#define AUDIO_PIN       C6
-
 /* serial.c configuration for split keyboard */
-// #define USE_SERIAL
 #define KINETIC_SPEED
 #define SOFT_SERIAL_PIN D2
 #define EE_HANDS
-
-#define ENCODERS_PAD_A \
-    { D5 }
-#define ENCODERS_PAD_B \
-    { C7 }
-
-/* PMW33XX Settings */
-#define PMW33XX_CS_PIN B6
-#define SPLIT_USB_DETECT
-#define MASTER_RIGHT
 #define USE_SERIAL
 
 #define SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT 2000
+
+/* PMW33XX Settings */
+#define PMW33XX_CS_PIN B6
+#define SPLIT_USB_DETECT
+

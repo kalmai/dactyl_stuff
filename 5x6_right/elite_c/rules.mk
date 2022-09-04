@@ -2,7 +2,7 @@
 MCU = atmega32u4
 
 # Bootloader selection
-BOOTLOADER = caterina
+BOOTLOADER = qmk-dfu
 BOOTMAGIC_ENABLE = yes
 
 SPLIT_KEYBOARD = yes

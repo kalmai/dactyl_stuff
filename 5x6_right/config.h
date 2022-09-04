@@ -45,7 +45,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT 2000
 #define POINTING_DEVICE_RIGHT
-#define MASTER_RIGHT
+// #define MASTER_RIGHT
 #define USE_SERIAL
 
 #define SOFT_SERIAL_PIN D2
