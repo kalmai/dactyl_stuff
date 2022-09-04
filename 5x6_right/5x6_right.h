@@ -49,4 +49,3 @@
       { L55, L54, L53, L52, XXX, XXX } \
 }
 // clang-format on
-// { R00, R01, R02, R03, R04, R05 },

@@ -12,13 +12,9 @@ NKRO_ENABLE = yes           # Enable N-Key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
-# SWAP_HANDS_ENABLE = yes
 
-# POINTING_DEVICE_ENABLE = yes
-# POINTING_DEVICE_DRIVER = pmw3360
-# MOUSE_SHARED_EP = yes
+POINTING_DEVICE_ENABLE = yes
+POINTING_DEVICE_DRIVER = pmw3360
+MOUSE_SHARED_EP = yes
 
 SPLIT_KEYBOARD = yes
-
-# DEFAULT_FOLDER = handwired/tractyl_manuform/5x6_right/elite_c
-# VIA_ENABLE = yes
