@@ -27,9 +27,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DIODE_DIRECTION             COL2ROW
 
-#define ROTATIONAL_TRANSFORM_ANGLE  -25
-#define POINTING_DEVICE_INVERT_X
-
 /* Bootmagic Lite key configuration */
 #define BOOTMAGIC_LITE_ROW          0
 #define BOOTMAGIC_LITE_COLUMN       0
@@ -42,12 +39,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-#define SPLIT_USB_DETECT
-#define SPLIT_USB_TIMEOUT 2000
-#define SPLIT_POINTING_ENABLE 
-#define POINTING_DEVICE_RIGHT
-// #define MASTER_RIGHT
 #define USE_SERIAL
-
 #define SOFT_SERIAL_PIN D2
 #define EE_HANDS
+#define SPLIT_USB_DETECT
+#define SPLIT_USB_TIMEOUT 2000
+
+/* POINTING DEVICE */
+#define SPLIT_POINTING_ENABLE 
+#define POINTING_DEVICE_RIGHT
+#define ROTATIONAL_TRANSFORM_ANGLE  -30
+// #define POINTING_DEVICE_INVERT_X
+#define POINTING_DEVICE_INVERT_Y
+#define PMW33XX_CPI 1200
