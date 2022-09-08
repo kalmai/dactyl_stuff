@@ -16,15 +16,26 @@
 
 #include QMK_KEYBOARD_H
 
-enum custom_keycodes {
-      DRAG_SCROLL = SAFE_RANGE,
-};
-
-bool set_scrolling = false;
+static bool scrolling_mode = false;
+ 
+layer_state_t layer_state_set_user(layer_state_t state) {
+  switch (get_highest_layer(state)) {
+    case 2:  // If we're on the _RAISE layer enable scrolling mode
+      scrolling_mode = true;
+      pointing_device_set_cpi(600);
+      break;
+    default:
+      if (scrolling_mode) {  // check if we were scrolling before and set disable if so
+	scrolling_mode = false;
+	pointing_device_set_cpi(1200);
+      }
+      break;
+  }
+  return state;
+}
 
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
-  if (set_scrolling) {
-    // pointing_device_set_cpi();
+  if (scrolling_mode) {
     mouse_report.h = mouse_report.x;
     mouse_report.v = -mouse_report.y;
     mouse_report.x = 0;
@@ -33,14 +44,6 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
   return mouse_report;
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (keycode == DRAG_SCROLL && record->event.pressed) {
-    set_scrolling = !set_scrolling;
-  }
-  return true;
-}
-
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_5x6_right(
      KC_1  ,KC_2  , KC_3  , KC_4  , KC_5 , KC_6  ,                            KC_7  , KC_8  , KC_9  , KC_0  , KC_MINS, KC_EQL,
@@ -48,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_LCTL, KC_A  , KC_S  , KC_D  , KC_F  , KC_G  ,                         KC_H  , KC_J  , KC_K  , KC_L  ,KC_SCLN,KC_QUOT,
      KC_LSFT, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,                         KC_N  , KC_M  , KC_COMM,KC_DOT ,KC_SLSH, KC_RSFT,
      MO(2) , KC_PGDN, KC_PGUP,MO(1) ,KC_LALT, KC_SPC,                                MO(1) , KC_ENT, KC_LBRC,  KC_RBRC,KC_BACKSLASH,
-                       KC_BTN1,KC_BTN2, KC_LGUI, DRAG_SCROLL,                          KC_ESC, KC_PSCR, KC_GRV
+                       KC_BTN1,KC_BTN2, KC_LGUI, KC_BTN3,                          KC_ESC, KC_PSCR, KC_GRV
   ),
 
   [1] = LAYOUT_5x6_right(
