@@ -20,9 +20,9 @@ static bool scrolling_mode = false;
  
 layer_state_t layer_state_set_user(layer_state_t state) {
   switch (get_highest_layer(state)) {
-    case 2:  // If we're on the _RAISE layer enable scrolling mode
+    case 3:  // If we're on the _RAISE layer enable scrolling mode
       scrolling_mode = true;
-      pointing_device_set_cpi(600);
+      pointing_device_set_cpi(200);
       break;
     default:
       if (scrolling_mode) {  // check if we were scrolling before and set disable if so
@@ -50,8 +50,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TAB , KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  ,                         KC_Y  , KC_U  , KC_I  , KC_O  , KC_P  ,KC_BACKSPACE,
      KC_LCTL, KC_A  , KC_S  , KC_D  , KC_F  , KC_G  ,                         KC_H  , KC_J  , KC_K  , KC_L  ,KC_SCLN,KC_QUOT,
      KC_LSFT, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,                         KC_N  , KC_M  , KC_COMM,KC_DOT ,KC_SLSH, KC_RSFT,
-     MO(2) , KC_PGDN, KC_PGUP,MO(1) ,KC_LALT, KC_SPC,                                MO(1) , KC_ENT, KC_LBRC,  KC_RBRC,KC_BACKSLASH,
-                       KC_BTN1,KC_BTN2, KC_LGUI, KC_BTN3,                          KC_ESC, KC_PSCR, KC_GRV
+     MO(2) , KC_PGDN, KC_PGUP,MO(1) ,KC_SPC, KC_LALT,                                MO(1) , KC_ENT, KC_LBRC,  KC_RBRC,KC_BACKSLASH,
+                       KC_BTN1,KC_BTN2, KC_LGUI, MO(3),                          KC_ESC, KC_PSCR, KC_GRV
   ),
 
   [1] = LAYOUT_5x6_right(
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                    KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT,KC_TRNS, KC_TRNS,
      KC_TRNS, KC_TRNS, KC_TRNS, KC_CAPS, KC_TRNS, KC_TRNS,                    KC_BTN1, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                             KC_TRNS, AG_TOGG, KC_TRNS
+                       KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN3,                             KC_TRNS, AG_TOGG, KC_TRNS
   ),
 
   [2] = LAYOUT_5x6_right(
@@ -70,6 +70,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                    KC_TRNS, KC_MRWD, KC_MFFD, KC_TRNS, KC_TRNS, KC_TRNS,
      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                             KC_TRNS, KC_TRNS, KC_TRNS
+     ),
+  [3] = LAYOUT_5x6_right(
+     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                       KC_NO, KC_NO, KC_NO, KC_NO,                             KC_NO, KC_NO, KC_NO
      ),
 };
 
